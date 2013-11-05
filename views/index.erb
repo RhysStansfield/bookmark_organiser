@@ -1,0 +1,10 @@
+<% @links.each do |link| %>
+<article>
+  <header>
+    <h1><a href="<%= link.uri %>"><%= link.title %></a></h1>
+  </header>
+  <p><%= link.description %></p>
+  <footer>
+  </footer>
+</article>
+<% end %>
