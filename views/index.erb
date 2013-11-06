@@ -5,6 +5,9 @@
   </header>
   <p><%= link.description %></p>
   <footer>
+    <% link.tags.each do |tag| %>
+      <p><%= tag.text %></p>
+    <% end %>
   </footer>
 </article>
 <% end %>

@@ -45,4 +45,11 @@ describe Link do
 
   end
 
+  # context 'interacting' do
+  #   it 'returns the first 3 words from the description' do
+  #     link.description= 'blah bleh bling blong blang blif blurk blank'
+  #     expect(Link.last.short_description).to eq 'blah bleh bling...'
+  #   end
+  # end
+
 end
