@@ -1,5 +1,5 @@
 Then(/^I should have a link in my database$/) do
-  (Link.all.count).should equal 1
+  (Link.all.count).should equal 3
 end
 
 Given(/^I am using the bookmark manager$/) do

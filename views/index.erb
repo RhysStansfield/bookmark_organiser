@@ -6,7 +6,9 @@
   <p><%= link.description %></p>
   <footer>
     <% link.tags.each do |tag| %>
-      <p><%= tag.text %></p>
+      <p>
+        <a href="/tags/<%= tag.text %>"><%= tag.text %></a>
+      </p>
     <% end %>
   </footer>
 </article>

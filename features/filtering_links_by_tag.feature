@@ -10,5 +10,10 @@ Feature: Filtering links
 
   Scenario: Finding links with same tag
     Given I have a link with the tag "derp"
-    When I follow "derp"
+    When I click on "derp"
+    Then I should see all links tagged with "derp"
+
+  Scenario: Searching by tag
+    Given I am on the tag search page
+    When I search for "derp"
     Then I should see all links tagged with "derp"

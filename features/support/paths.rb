@@ -16,6 +16,12 @@ module NavigationHelpers
     when /the add link\s?page/
       '/add_link'
 
+    when /the tag search page/
+      '/tags/search'
+
+    when /the sign up page/
+      '/users/new'
+
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

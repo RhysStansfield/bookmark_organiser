@@ -8,7 +8,7 @@
       <nav>
         <a href='/add_link'>Add Link</a>
         <ul>
-          <li><a href="">Sign Up</a></li>
+          <li><a href="/users/new">Sign Up</a></li>
           <li><a href="">Sign In</a></li>
         </ul>
       </nav>
@@ -17,6 +17,12 @@
       <ul>
         <li><a href='/tags'>Tags</a></li>
       </ul>
+      <% if current_user %>
+        Welcome, <%= current_user.email %>!
+      <% end %>
+      <form action='/search'>
+        <input type='search' name='tagsearch' placeholder='Search tags'>
+      </form>
       <%= yield %>
     </section>
     <footer>

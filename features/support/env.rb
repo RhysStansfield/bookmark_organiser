@@ -29,6 +29,13 @@ end
 
 Before do
   DatabaseCleaner.start
+  Link.create(title: 'Google',
+    uri: 'http://google.com',
+    description: 'This is Google fool!',
+    tags: [Tag.first_or_create(text: 'search-engine, find')])
+  Link.create(title: 'Maddox',
+    uri: 'http://thebestpageintheuniverse.com',
+    description: 'funny offensive')
 end
 
 After do |scenario|
