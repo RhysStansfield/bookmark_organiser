@@ -14,6 +14,7 @@ Feature: Filtering links
     Then I should see all links tagged with "derp"
 
   Scenario: Searching by tag
-    Given I am on the tag search page
+    Given I am logged in
+    And I have a link with the tag "derp"
     When I search for "derp"
     Then I should see all links tagged with "derp"

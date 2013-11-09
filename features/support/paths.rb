@@ -16,9 +16,6 @@ module NavigationHelpers
     when /the add link\s?page/
       '/add_link'
 
-    when /the tag search page/
-      '/tags/search'
-
     when /the sign up page/
       '/users/new'
 

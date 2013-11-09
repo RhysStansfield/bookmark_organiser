@@ -6,9 +6,7 @@
   <p><%= link.description %></p>
   <footer>
     <% link.tags.each do |tag| %>
-      <p>
-        <a href="/tags/<%= tag.text %>"><%= tag.text %></a>
-      </p>
+      <%= partial :tag, locals: {tag: tag} %>
     <% end %>
   </footer>
 </article>

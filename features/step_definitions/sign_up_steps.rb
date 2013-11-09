@@ -31,7 +31,7 @@ Then(/^I should not have an account$/) do
 end
 
 Then(/^I should still be on the sign up page$/) do
-  expect(current_path).to eq('/users')
+  expect(current_path).to eq('/users/new')
   page.should have_content 'Password does not match the confirmation'
 end
 
@@ -54,6 +54,6 @@ When(/^I try to sign up with the same email$/) do
 end
 
 Then(/^I should still be on the sign up page and see an error message$/) do
-  expect(current_path).to eq('/users')
+  expect(current_path).to eq('/users/new')
   page.should have_content "Sorry, that email is already taken!"
 end

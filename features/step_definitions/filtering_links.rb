@@ -26,3 +26,8 @@ end
 Then(/^I should see all links tagged with "(.*?)"$/) do |tag|
   (page).has_content? tag
 end
+
+When(/^I search for "(.*?)"$/) do |tag|
+  fill_in 'tagsearch', with: tag
+  click_button 'Search'
+end

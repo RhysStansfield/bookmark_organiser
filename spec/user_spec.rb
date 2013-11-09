@@ -11,6 +11,10 @@ describe User do
     expect(user.email).to eq 'veryspecialemail@footle.com'
   end
 
+  it 'has a unique identifier' do
+    expect(user.id).to equal 1
+  end
+
   it 'has a password' do
     expect(user.password_digest).to be_a_kind_of String
   end
