@@ -12,7 +12,7 @@ class User
   has n, :links, through: Resource
   
   property :id, Serial
-  property :email, String, unique: true, message: "Sorry, that email is already taken!" 
+  property :email, String, unique: true, message: "Sorry, that email is already taken!"
   property :password_digest, Text
 
   def password= password

@@ -1,0 +1,16 @@
+.link {
+  position: relative;
+}
+
+.link .radioactive {
+  position: absolute;
+  font-size: 24px;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.link .radioactive.colored {
+  color: green;
+  opacity: 0;
+}

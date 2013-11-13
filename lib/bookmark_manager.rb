@@ -22,11 +22,11 @@ class BookmarkManager < Sinatra::Base
       session.clear
     end
     @links = Link.all
-    erb :index
+    erb :index, layout: !request.xhr?
   end
 
   get '/add_link' do
-    erb :add_link
+    erb :add_link, layout: !request.xhr?
   end
 
   post '/add_link' do
@@ -43,7 +43,7 @@ class BookmarkManager < Sinatra::Base
 
   get '/tags' do
     @tags = Tag.all
-    erb :tags
+    erb :tags, layout: !request.xhr?
   end
 
   get '/tags/:text' do
@@ -56,7 +56,7 @@ class BookmarkManager < Sinatra::Base
     tag = session[:tag]
     session[:tag] = nil
     @links = tag ? tag.links : []
-    erb :index
+    erb :index, layout: !request.xhr?
   end
 
 
@@ -70,7 +70,7 @@ class BookmarkManager < Sinatra::Base
     @user.email = session[:email]
     flash.now[:errors] = session[:errors]
     session[:errors] = nil
-    erb :"users/new"
+    erb :"users/new", layout: !request.xhr?
   end
 
   post '/users' do
@@ -89,8 +89,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/sessions/new' do
-    erb :"sessions/new"
-  end
+    erb :"sessions/new", layout: !request.xhr?
+  end 
 
   post '/sessions' do
     email, password = params[:email], params[:password]
@@ -111,7 +111,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/reset_password' do
-    erb :new_password
+    erb :new_password, layout: !request.xhr?
   end
 
   post '/reset_password' do

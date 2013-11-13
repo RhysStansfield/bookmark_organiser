@@ -1,13 +1,29 @@
 <% @links.each do |link| %>
-<article>
-  <header>
-    <h1><a href="<%= link.uri %>"><%= link.title %></a></h1>
-  </header>
-  <p><%= link.description %></p>
-  <footer>
-    <% link.tags.each do |tag| %>
-      <%= partial :tag, locals: {tag: tag} %>
-    <% end %>
-  </footer>
-</article>
+  <article class='link'>
+    <header>
+      <h1 data-id='<%= link.id %>'><a href="<%= link.uri %>"><%= link.title %></a></h1>
+    </header>
+    <p class='title'><%= link.description %></p>
+    <footer>
+      <% link.tags.each do |tag| %>
+        <%= partial :tag, locals: {tag: tag} %>
+      <% end %>
+      <div class='radioactive uncolored'>&#9762;</div>
+      <div data-id='<%= link.id %>' class='radioactive colored'>&#9762;</div>
+      <div class='flash_container'>
+        <% if flash[:notice] %>
+          <div id='flash notice'>
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <% if flash[:errors] && !flash[:errors].empty? %>
+          <ul>
+            <% flash[:errors].each do |error| %>
+              <li class='flash error'><%= error %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </footer>
+  </article>
 <% end %>
