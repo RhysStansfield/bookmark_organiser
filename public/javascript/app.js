@@ -22,8 +22,8 @@ $(function() {
 function showLinkFavouritedNotice(link_element, favourited) {
   var name = link_element.text();
   var message = favourited ?
-    name + " was removed from favourites" :
-    name + " was added to favourites";
+    name + " was added to favourites" :
+    name + " was removed from favourites";
   var $flash = $("<div></div>").addClass('flash notice').html(message);
   $flash.appendTo('#flash_container');
   window.setTimeout(function() {
@@ -50,7 +50,7 @@ function prepareFormHandler() {
   form.submit(function(event) {
     var addLink = function(data) {
       $('#container').append(data);
-      $('#new-link form').each(function(){
+      $('form').each(function(){
         this.reset();
       });
       $('#ajax-form').hide(1000);

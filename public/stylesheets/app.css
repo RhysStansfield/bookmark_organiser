@@ -14,3 +14,11 @@
   color: green;
   opacity: 0;
 }
+
+#flash_container {
+  position: fixed;
+  top: 0;
+  width: 99%;
+  background: aliceblue;
+  text-align: center;
+}
