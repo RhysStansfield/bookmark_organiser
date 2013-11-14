@@ -33,25 +33,30 @@ function showLinkFavouritedNotice(link_element, favourited) {
 
 function prepareRemoteFormsHandler() {
   $('.add-link, .sign-up, .sign-in, .tags').click(function(event) {
+    $('#ajax-form').show(1000);
     $.get($(this).attr("href"), function(data) {
       if ($('#ajax-form').length == 0) {
         $('#container').prepend("<div id='ajax-form'></div>");
       };
       $('#container #ajax-form').html(data);
+      prepareFormHandler();
     });
     event.preventDefault();
   });
 };
 
 function prepareFormHandler() {
-  var form = $('#container #ajax-form form');
+  var form = $('#container #ajax-form #new-link form');
   form.submit(function(event) {
     var addLink = function(data) {
       $('#container').append(data);
-    }
+      $('#new-link form').each(function(){
+        this.reset();
+      });
+      $('#ajax-form').hide(1000);
+    };
     var data = form.serialize();
     $.post(form.attr('action'), data, addLink);
     event.preventDefault();
   });
 };
-

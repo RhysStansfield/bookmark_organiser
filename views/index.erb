@@ -10,9 +10,9 @@
       <% end %>
       <div class='radioactive uncolored'>&#9762;</div>
       <div data-id='<%= link.id %>' class='radioactive colored'>&#9762;</div>
-      <div class='flash_container'>
+      <div id='flash_container'>
         <% if flash[:notice] %>
-          <div id='flash notice'>
+          <div class='flash notice'>
             <%= flash[:notice] %>
           </div>
         <% end %>

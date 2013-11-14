@@ -38,7 +38,12 @@ class BookmarkManager < Sinatra::Base
       Tag.first_or_create(:text => tag)
     end
     Link.create({uri: uri, title: title, description: description, tags: tags})
-    redirect to('/')
+    if request.xhr?
+      @links = [Link.last]
+      erb :index, layout: false
+    else
+      redirect to('/')
+    end
   end
 
   get '/tags' do
